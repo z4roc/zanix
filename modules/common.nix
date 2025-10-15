@@ -40,7 +40,7 @@
   users.users.zaroc = {
     isNormalUser = true;
     description = "zaroc";
-    extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "audio" "docker" ];
     shell = pkgs.zsh;
   };
 

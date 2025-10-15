@@ -1,8 +1,26 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
+  imports = [
+    inputs.illogical-impulse.homeManagerModules.default
+  ];
+
   home.username = "zaroc";
   home.homeDirectory = "/home/zaroc";
+
+  illogical-impulse = {
+    enable = true;
+    hyprland = {
+      package = inputs.hypr.packages.x86_64-linux.hyprland;
+      xdgPortalPackage = inputs.hypr.packages.x86_64-linux.xdg-desktop-portal-hyprland;
+      ozoneWayland.enable = true;
+    };
+
+    dotfiles = {
+      fish.enable = true;
+      kitty.enable = true;
+    };
+  };
 
   # Home Manager state version
   home.stateVersion = "25.05";
@@ -14,7 +32,7 @@
   programs.git = {
     enable = true;
     userName = "zaroc";
-    userEmail = "zaroc@example.com";
+    userEmail = "arthuraktamirov@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
     };
@@ -49,7 +67,7 @@
     };
     theme = "Dracula";
     settings = {
-      background_opacity = "0.95";
+      background_opacity = "0.6";
       confirm_os_window_close = 0;
     };
   };
@@ -65,17 +83,12 @@
 
   # Home packages
   home.packages = with pkgs; [
+    
     # Desktop apps
-    discord
+    vesktop
     spotify
-    vlc
-    
-    # Development tools
-    gcc
-    gnumake
-    python3
-    nodejs
-    
+    vlc    
+
     # CLI tools
     btop
     ripgrep

@@ -13,6 +13,11 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    illogical-impulse = {
+      url = "github:end-4/illogical-impulse";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs: {
@@ -57,7 +62,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.zaroc = import ./home/zaroc.nix;
+            home-manager.users.zaroc = import ./home/server.nix;
           }
         ];
       };
