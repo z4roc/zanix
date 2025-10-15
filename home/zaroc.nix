@@ -1,9 +1,6 @@
-{ inputs, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  imports = [
-    inputs.illogical-impulse.homeManagerModules.default
-  ];
 
   home.username = "zaroc";
   home.homeDirectory = "/home/zaroc";
