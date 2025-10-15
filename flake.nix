@@ -13,9 +13,14 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    illogical-impulse = {
+      url = "github:xBLACKICEx/end-4-dots-hyprland-nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, hyprland, illogical-impulse, ... }@inputs: {
     nixosConfigurations = {
       # NVIDIA Desktop PC
       zaroc-desktop = nixpkgs.lib.nixosSystem {
