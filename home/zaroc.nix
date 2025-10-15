@@ -11,8 +11,8 @@
   illogical-impulse = {
     enable = true;
     hyprland = {
-      package = inputs.hypr.packages.x86_64-linux.hyprland;
-      xdgPortalPackage = inputs.hypr.packages.x86_64-linux.xdg-desktop-portal-hyprland;
+      package = inputs.hyprland.packages.x86_64-linux.hyprland;
+      xdgPortalPackage = inputs.hyprland.packages.x86_64-linux.xdg-desktop-portal-hyprland;
       ozoneWayland.enable = true;
     };
 
@@ -99,7 +99,7 @@
     
     # Fonts
     jetbrains-mono
-    nerdfonts
+    # nerdfonts DEPRECATED
   ];
 
   # XDG configuration

@@ -24,8 +24,8 @@
   # Console keymap
   console.keyMap = "de";
 
-  # Enable sound
-  sound.enable = true;
+  # Enable sound DEPRECATED
+  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
