@@ -13,21 +13,16 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    illogical-impulse = {
-      url = "github:end-4/illogical-impulse";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs: {
     nixosConfigurations = {
       # NVIDIA Desktop PC
-      zaroc-4070 = nixpkgs.lib.nixosSystem {
+      zaroc-desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/zaroc-4070/configuration.nix
+          ./hosts/zaroc-desktop/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -42,7 +37,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/zaroc-gb3/configuration.nix
+          ./hosts/zaroc-laptop/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -63,6 +58,20 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.zaroc = import ./home/server.nix;
+          }
+        ];
+      };
+      # vm test
+      zaroc-4070 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/vm/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.zaroc = import ./home/zaroc.nix;
           }
         ];
       };
