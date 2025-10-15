@@ -1,0 +1,17 @@
+# NixOS
+result
+result-*
+
+# Hardware-specific configurations (user should customize)
+# hosts/*/hardware-configuration.nix
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
