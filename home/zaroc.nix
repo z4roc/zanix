@@ -8,20 +8,6 @@
   home.username = "zaroc";
   home.homeDirectory = "/home/zaroc";
 
-  illogical-impulse = {
-    enable = true;
-    hyprland = {
-      package = inputs.hyprland.packages.x86_64-linux.hyprland;
-      xdgPortalPackage = inputs.hyprland.packages.x86_64-linux.xdg-desktop-portal-hyprland;
-      ozoneWayland.enable = true;
-    };
-
-    dotfiles = {
-      fish.enable = true;
-      kitty.enable = true;
-    };
-  };
-
   # Home Manager state version
   home.stateVersion = "25.05";
 

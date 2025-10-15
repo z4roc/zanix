@@ -35,13 +35,6 @@
   
   services.libinput.enable = true;
 
-  users.users.zaroc = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" ];
-     packages = with pkgs; [
-       tree
-     ];
-   };
   services.getty.autologinUser = "zaroc";
   
 
