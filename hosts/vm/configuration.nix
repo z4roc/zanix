@@ -46,13 +46,11 @@
   
 
   # KDE Plasma Desktop
-  services.xserver = {
-	  enable = true;
-	  displayManager.sddm.enable = true;
-	  desktopManager.plasma6.enable = true;
-	  displayManager.autoLogin.enable = true;
-	  displayManager.autoLogin.user = "zaroc";
-  };
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "zaroc";
 
 
   # Hyprland
