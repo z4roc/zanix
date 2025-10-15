@@ -1,0 +1,2 @@
+# zanix
+My nixos config
