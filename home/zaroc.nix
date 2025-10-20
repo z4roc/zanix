@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-
+  imports = [
+    inputs.caelestia-shell.homeManagerModules.default
+  ];
+  
   home.username = "zaroc";
   home.homeDirectory = "/home/zaroc";
 
@@ -11,7 +14,7 @@
   # Let Home Manager manage itself
   programs.home-manager.enable = true;
 
-  programs.caelestia-shell = {
+  programs.caelestia = {
     enable = true;
     systemd = {
       enable = false; # if you prefer starting from your compositor
