@@ -9,6 +9,7 @@
     # Let Home Manager manage itself
     programs.home-manager.enable = true;
 
+
     # Git configuration
     programs.git = {
       enable = true;

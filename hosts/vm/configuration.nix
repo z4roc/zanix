@@ -47,14 +47,6 @@
 	  displayManager.autoLogin.user = "zaroc";
   };
 
-
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    xwayland.enable = true;
-  };
-
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
