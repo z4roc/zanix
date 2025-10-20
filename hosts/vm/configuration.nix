@@ -35,7 +35,7 @@
   
   services.libinput.enable = true;
 
-  services.getty.autologinUser = "zaroc";
+  # services.getty.autologinUser = "zaroc";
   
 
   # KDE Plasma Desktop
@@ -43,8 +43,12 @@
 	  enable = true;
 	  displayManager.sddm.enable = true;
 	  desktopManager.plasma6.enable = true;
-	  displayManager.autoLogin.enable = true;
-	  displayManager.autoLogin.user = "zaroc";
+	  # displayManager.autoLogin.enable = true;
+	  # displayManager.autoLogin.user = "zaroc";
+
+    displayManager.sessionPackages = with pkgs; [
+      hyprland
+    ];
   };
 
   programs.firefox.enable = true;
