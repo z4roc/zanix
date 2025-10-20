@@ -11,7 +11,7 @@
   # Let Home Manager manage itself
   programs.home-manager.enable = true;
 
-  programs.caelestia = {
+  programs.caelestia-shell = {
     enable = true;
     systemd = {
       enable = false; # if you prefer starting from your compositor
