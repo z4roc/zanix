@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports = [
     inputs.caelestia-shell.homeManagerModules.default
   ];
-  
+
   home.username = "zaroc";
   home.homeDirectory = "/home/zaroc";
 
